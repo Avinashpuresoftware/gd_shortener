@@ -101,3 +101,11 @@ jobs:
       <<: *test-template-python3
       docker:
         - image: circleci/python:3.8.0
+        
+  test-arm:
+      <<: *test-template-python3
+      docker:
+      - image: circleci/python:3.8.0
+      machine:
+        image: ubuntu-2004:202101-01
+      resource_class: arm.medium
